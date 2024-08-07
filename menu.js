@@ -4,6 +4,7 @@ const corretora = require("./modulos/corretora.js");
 const cliente = require("./modulos/clientes.js");
 const corretor = require("./modulos/corretor.js");
 const imovel = require("./modulos/imovel.js")
+const venda = require("./modulos/venda.js")
 
 
 const menuPrincipal = () => {
@@ -19,6 +20,7 @@ const menuPrincipal = () => {
                   2 - CLIENTE
                   3 - CORRETOR
                   4 - IMÓVEL
+                  5 - VENDA
                   0 - SAIR
                   `);
 
@@ -41,6 +43,10 @@ const menuPrincipal = () => {
         menuImovel();
         break;
 
+      case 5:
+        menuVenda();
+        break;
+  
       case 0:
         process.exit();
         break;
@@ -194,5 +200,42 @@ const menuImovel = () => {
     }
   }
 };
+
+const menuVenda = () => {
+  console.log("GERENCIAMENTO DE VENDA");
+  while (true) {
+    console.log(`
+              1 - CADASTRAR VENDA
+              2 - LISTAR VENDAS
+              3 - ATUALIZAR VENDA
+              4 - EXCLUIR VENDA
+              0 - SAIR
+              `);
+
+    const opcaoServico = parseInt(prompt(": "));
+
+    switch (opcaoServico) {
+      case 1:
+        corretora.store();
+        break;
+      case 2:
+        corretora.index();
+        break;
+      case 3:
+        corretora.update();
+        break;
+      case 4:
+        corretora.destroy();
+        break;
+
+      case 0:
+        return;
+      default:
+        console.log("OPCAO INVALIDA");
+        break;
+    }
+  }
+};
+
 
 menuPrincipal();
