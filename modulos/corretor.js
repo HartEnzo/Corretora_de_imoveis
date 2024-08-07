@@ -9,7 +9,7 @@ let proxId = 1;
 const model = (id = proxId++) => {
   const nome = prompt("Nome: ");
 
-  const id_corretora = 0
+  let id_corretora = 0
   if(corretora.index()) {
       id_corretora = parseInt(prompt("ID da corretora: "));
   } else {
