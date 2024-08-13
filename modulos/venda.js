@@ -93,9 +93,14 @@ const update = () => {
 
 const destroy = () => {
   if (index()) {
-    const id = parseInt(prompt("ID: "));
+    const id = parseInt(prompt("ID: "), 10);
 
-    const indice = cr.findIndex((el) => el.id == id);
+    if (isNaN(id)) {
+      console.log("ID inválido. Por favor, insira um número: ");
+      return;
+    }
+
+    const indice = cr.findIndex((el) => el.id === id);
 
     if (indice != -1) {
       cr.splice(indice, 1);
