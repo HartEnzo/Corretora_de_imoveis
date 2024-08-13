@@ -3,8 +3,8 @@ const prompt = require("prompt-sync")();
 const corretora = require("./modulos/corretora.js");
 const cliente = require("./modulos/clientes.js");
 const corretor = require("./modulos/corretor.js");
-const imovel = require("./modulos/imovel.js")
-const venda = require("./modulos/venda.js")
+const imovel = require("./modulos/imovel.js");
+const venda = require("./modulos/venda.js");
 
 
 const menuPrincipal = () => {

@@ -72,19 +72,24 @@ const update = () => {
 };
 
 const destroy = () => {
-    if(index()) {
-        const id = parseInt(prompt("ID: "));
+  if (index()) {
+    const id = parseInt(prompt("ID: "), 10);
 
-        const indice = cr.findIndex(el => el.id == id);
-
-        if(indice != -1) {
-            cr.splice(indice, 1);
-            console.log("Registro excluído com sucesso");
-        } else {
-            console.log("Registro não encontrado")
-        }
+    if (isNaN(id)) {
+      console.log("ID inválido. Por favor, insira um número: ");
+      return;
     }
-}
+
+    const indice = cr.findIndex((el) => el.id === id);
+
+    if (indice != -1) {
+      cr.splice(indice, 1);
+      console.log("Registro excluído com sucesso");
+    } else {
+      console.log("Registro não encontrado");
+    }
+  }
+};
 
 module.exports = {
     store,
